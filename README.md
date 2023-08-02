@@ -3,7 +3,6 @@
 </div>
 
 <div align="center">
-
 # EasyNoneBot
 
 _✨ NoneBot 的最小快速部署方案 ✨_

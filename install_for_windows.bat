@@ -30,9 +30,9 @@ if %errorlevel% equ 0 (
 	pip install nonebot2[fastapi]
 	pip install nb-cli
 	echo 下载模板项目
-    curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
-    powershell -Command "Expand-Archive -Path nb.zip -DestinationPath nb"
-    del nb.zip
+	curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
+	powershell -Command "Expand-Archive -Path nb.zip -DestinationPath nb"
+	del nb.zip
 	echo 安装适配器
 	cd nb & nb adapter install nonebot-adapter-onebot
 	echo 安装完成！请使用项目下的“start.bat”启动nonebot

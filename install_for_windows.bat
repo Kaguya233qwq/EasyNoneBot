@@ -1,0 +1,47 @@
+@echo off
+chcp 65001 >nul
+setlocal enableDelayedExpansion
+for /f %%A in ('echo prompt $E ^| cmd') do set "ESC=%%A"
+cls
+
+echo %ESC%[1;34m
+echo " _____                _   _                 ______       _   "
+echo "|  ___|              | \ | |                | ___ \     | |  "
+echo "| |__  __ _ ___ _   _|  \| | ___  _ __   ___| |_/ / ___ | |_ "
+echo "|  __|/ _` / __| | | | . ` |/ _ \| '_ \ / _ \ ___ \/ _ \| __|"
+echo "| |__| (_| \__ \ |_| | |\  | (_) | | | |  __/ |_/ / (_) | |_ "
+echo "\____/\__,_|___/\__, \_| \_/\___/|_| |_|\___\____/ \___/ \__|"
+echo "                 __/ |                                       "
+echo "                |___/                                        "
+echo %ESC%[0m
+
+REM 判断是否安装了python，若已安装则开始配置虚拟环境并安装nonebot
+where python >nul 2>nul
+if %errorlevel% equ 0 (
+    echo Python 已安装，开始安装虚拟环境工具..
+	pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+	pip install virtualenvwrapper-win
+	echo 创建虚拟环境..
+	mkvirtualenv nb
+	echo 启用虚拟环境
+	workon nb
+	echo 安装nonebot
+	pip install nonebot2[fastapi]
+	pip install nb-cli
+	echo 克隆模板项目
+	where git >nul 2>nul
+	if %errorlevel% equ 0 (
+		echo 已安装git，开始gitclone项目
+		git clone https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/nb
+	)else (
+		echo git未安装，请安装后重新执行
+		pause
+	)
+	echo 安装适配器
+	cd nb & nb adapter install nonebot-adapter-onebot
+	echo 安装完成！请使用项目下的“start.bat”启动nonebot
+	pause
+) else (
+    echo 你还没有安装Python，请自行下载安装
+)
+pause

@@ -38,6 +38,9 @@ if %errorlevel% equ 0 (
 	echo 安装完成！请使用项目下的“start.bat”启动nonebot
 	pause
 ) else (
-    echo 你还没有安装Python，请自行下载安装
+    echo 你还没有安装Python，正在下载安装..
+	powershell wget -O Python_setup.exe https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe
+	cmd /c Python_setup.exe /quiet TargetDir=C:/Python311 InstallAllUsers=1 PrependPath=1 Include_test=0
+	echo python安装成功，请重新运行脚本
 )
 pause

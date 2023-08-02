@@ -30,7 +30,6 @@ if %errorlevel% equ 0 (
 	pip install nonebot2[fastapi]
 	pip install nb-cli
 	echo 下载模板项目
-	where git >nul 2>nul
     curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
     powershell -Command "Expand-Archive -Path nb.zip -DestinationPath nb"
     del nb.zip

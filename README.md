@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://v2.nonebot.dev/store"><img src="" width="180" height="180" alt="EasyNoneBotLogo"></a>
+  <a href="https://v2.nonebot.dev/store"><img src="https://github.com/Kaguya233qwq/EasyNoneBot/blob/master/icon/easy_nonebot.png" width="180" height="180" alt="EasyNoneBotLogo"></a>
 </div>
 
 <div align="center">

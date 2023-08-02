@@ -1,3 +1,4 @@
+%1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c "^&chr(34)^&"%~0"^&chr(34)^&" ::","%cd%","runas",1)(window.close)&&exit
 @echo off
 chcp 65001 >nul
 setlocal enableDelayedExpansion
@@ -28,11 +29,12 @@ if %errorlevel% equ 0 (
 	echo 安装nonebot
 	pip install nonebot2[fastapi]
 	pip install nb-cli
-	echo 克隆模板项目
+	echo 下载模板项目
 	where git >nul 2>nul
 	if %errorlevel% equ 0 (
-		echo 已安装git，开始gitclone项目
-		git clone https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/nb
+		curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
+		powershell -Command "Expand-Archive -Path nb.zip -DestinationPath nb"
+		del nb.zip
 	)else (
 		echo git未安装，请安装后重新执行
 		pause

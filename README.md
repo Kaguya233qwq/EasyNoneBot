@@ -54,7 +54,25 @@ git clone 本项目，选择直接双击运行"install_for_windows.bat"
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Kaguya233qwq/EasyNoneBot/master/install_for_linux.sh)"`
 
+如果不能执行，请修改hosts文件：
+
+1.用熟悉的文本编辑器打开hosts 
+
+`sudo vim /etc/hosts`
+
+2.查询raw.githubusercontent.com的[ip地址](https://tool.lu/ip/) ：
+
+`185.199.108.133`
+
+3.在hosts文件的最下面一行添加：
+
+`185.199.108.133 raw.githubusercontent.com`
+
+保存退出后再次运行即可
+
+
 </details>
+
 
 ## 🔑许可证
 

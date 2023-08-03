@@ -65,15 +65,15 @@ source /usr/bin/virtualenvwrapper.sh
 		pip3 install nb-cli
 		echo "Downloading template folder.."
 		curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
-		if command -v pip &>/dev/null; then 
+		if command -v unzip &>/dev/null; then
 			unzip nb.zip
 			echo "installing adapter.."
 			cd nb && nb adapter install nonebot-adapter-onebot
-			print_color_text "Everything is ok!Now you can launch Nonebot by :" "33;1;1"
+			print_color_text "Everything is ok!Now you can launch Nonebot by :" "32;1;1"
 			print_color_text " - using command 'workon nb && nb run'" "32;1;1"
 			print_color_text " - using command 'bash ./start.sh'" "32;1;1"
 		else
-			echo "package 'unzip' is not installed,please try to install it and restart the script"
+			print_color_text "package 'unzip' is not installed,please try to install it and restart the script" "31;1;1"
 		fi
     else
         print_color_text "pip is not installed,trying install.." "33;1;1"

@@ -7,6 +7,16 @@ print_color_text() {
   echo -e "\033[${color}m${text}\033[0m"
 }
 
+handle_error() {
+    local line_num=$1
+    local command=$2
+    print_color_text "An Error Occurred at line：$line_num,cmd：$command" "31;1;1"
+    print_color_text "Sorry,the script will stop and exit soon" "31;1;1"
+    exit 1
+}
+
+trap 'handle_error ${BASH_LINENO[0]} "$BASH_COMMAND"' ERR
+
 # Main script
 clear
 

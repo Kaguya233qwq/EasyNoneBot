@@ -49,13 +49,13 @@ source /usr/bin/virtualenvwrapper.sh
       echo "$content" >>~/.bashrc
       printc "bashrc update successfully" "31;1;1"
     else
-      printc "permission denied,try to get root" "32;1;1"
+      printc "permission denied,try to get root" "33;1;1"
 
       # 尝试使用sudo获取root权限写入文件
       if sudo sh -c "echo '$content' >> ~/.bashrc"; then
-        printc "force bashrc to update successfully" "31;1;1"
+        printc "force bashrc to update successfully" "32;1;1"
       else
-        printc "Error: all actions failed" "31;1;1"
+        printc "Error: all actions failed" "32;1;1"
         exit 1
       fi
     fi
@@ -66,17 +66,17 @@ source /usr/bin/virtualenvwrapper.sh
     mkvirtualenv nb
     # 启用
     workon nb
-    printc "virtual environment set completed"
+    printc "virtual environment set completed" "32;1;1"
     # 安装nonebot环境
-    echo "Now installing Nonebot.."
+    printc "Now installing Nonebot.." "34;1;1"
     # shellcheck disable=SC2102
     pip3 install nonebot2[fastapi]
     pip3 install nb-cli
-    echo "Downloading template folder.."
+    printc "Downloading template folder.." "34;1;1"
     curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
     if command -v unzip &>/dev/null; then
       unzip nb.zip
-      echo "installing adapter.."
+      printc "installing adapter.." "34;1;1"
       cd nb && nb adapter install nonebot-adapter-onebot
       printc "Everything is ok!Now you can launch Nonebot by :" "32;1;1"
       printc " - using command 'workon nb && nb run'" "32;1;1"

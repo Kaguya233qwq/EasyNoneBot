@@ -28,6 +28,7 @@ if command -v python3 &>/dev/null; then
 		pip3 install virtualenvwrapper
 		# 写入环境变量
 		# 要写入的内容
+		# shellcheck disable=SC1078
 		content="""export WORKON_HOME=~/Envs
 export VIRTUALENVWRAPPER=/usr/bin/python3
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -37,7 +38,7 @@ source /usr/bin/virtualenvwrapper.sh
 		if [[ -w ~/.bashrc ]]; then
 			# 将内容追加到.bashrc文件中
 			echo "$content" >> ~/.bashrc
-			echo "~/.bashrc update successfully"
+			echo "bashrc update successfully"
 		else
 			echo "permission denied,try to get root"
 
@@ -50,6 +51,7 @@ source /usr/bin/virtualenvwrapper.sh
 			fi
 		fi
 		# 刷新bashrc文件
+		# shellcheck disable=SC1090
 		source ~/.bashrc
 		# 新建虚拟环境
 		mkvirtualenv nb
@@ -58,6 +60,7 @@ source /usr/bin/virtualenvwrapper.sh
 		echo "virtual environment set completed"
 		# 安装nonebot环境
 		echo "Now installing Nonebot.."
+		# shellcheck disable=SC2102
 		pip3 install nonebot2[fastapi]
 		pip3 install nb-cli
 		echo "Downloading template folder.."
@@ -65,7 +68,7 @@ source /usr/bin/virtualenvwrapper.sh
 		if command -v pip &>/dev/null; then 
 			unzip nb.zip
 			echo "installing adapter.."
-			cd nb & nb adapter install nonebot-adapter-onebot
+			cd nb && nb adapter install nonebot-adapter-onebot
 			print_color_text "Everything is ok!Now you can launch Nonebot by :" "33;1;1"
 			print_color_text " - using command 'workon nb && nb run'" "32;1;1"
 			print_color_text " - using command 'bash ./start.sh'" "32;1;1"

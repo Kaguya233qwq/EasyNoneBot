@@ -50,7 +50,9 @@ git clone 本项目，选择直接双击运行"install_for_windows.bat"
 <details>
 <summary>⚙️为Linux系统安装</summary>
 
-`开发中，敬请期待`
+## 直接使用命令安装
+
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/Kaguya233qwq/EasyNoneBot/master/install_for_linux.sh)"`
 
 </details>
 

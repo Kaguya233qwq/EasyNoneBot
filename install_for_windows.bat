@@ -1,4 +1,3 @@
-%1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c "^&chr(34)^&"%~0"^&chr(34)^&" ::","%cd%","runas",1)(window.close)&&exit
 @echo off
 chcp 65001 >nul
 setlocal enableDelayedExpansion
@@ -40,7 +39,7 @@ if %errorlevel% equ 0 (
 ) else (
     echo 你还没有安装Python，正在下载安装..
 	powershell wget -O Python_setup.exe https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe
-	cmd /c Python_setup.exe /quiet TargetDir=C:/Python311 InstallAllUsers=1 PrependPath=1 Include_test=0
+	cmd /c Python_setup.exe /quiet TargetDir=C:\%USERNAME%\Administrator\AppData\Local\Programs\Python\Python311 InstallAllUsers=1 PrependPath=1 Include_test=0
 	echo python安装成功，请重新运行脚本
 )
 pause

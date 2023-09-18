@@ -10,7 +10,7 @@ _✨ NoneBot 的最小快速部署方案 ✨_
 
 
 <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/owner/nonebot-plugin-example.svg" alt="license">
+    <img src="https://img.shields.io/github/license/Kaguya233qwq/EasyNoneBot.svg" alt="license">
 </a>
 <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
 

@@ -73,7 +73,7 @@ source /usr/bin/virtualenvwrapper.sh
     pip3 install nonebot2[fastapi]
     pip3 install nb-cli
     printc "Downloading template folder.." "34;1;1"
-    curl https://ghproxy.com/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
+    curl https://kaguya.ink/proxy/https://github.com/Kaguya233qwq/EasyNoneBot/releases/download/template/nb.zip -o nb.zip
     if command -v unzip &>/dev/null; then
       unzip nb.zip
       printc "installing adapter.." "34;1;1"
@@ -86,7 +86,7 @@ source /usr/bin/virtualenvwrapper.sh
     fi
   else
     printc "pip is not installed,trying install.." "33;1;1"
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    curl https://kaguya.ink/proxy/https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     python get-pip.py
     printc "pip is installed successfully,please restart the script" "32;1;1"
   fi
